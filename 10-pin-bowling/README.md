@@ -25,7 +25,7 @@ tenth frame.
 
 ## The requirements
 
-* Write class "BowlingGame" that has two methods
+* Write object "BowlingGame" that has two functions
 	- *roll(pins)*
 		- called each time the player rolls a ball. The argument is the number of pins knocked down.
 	- *score()*
