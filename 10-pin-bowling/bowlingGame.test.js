@@ -46,3 +46,9 @@ test('One Strike', () => {
   expect(game.getScore()).toBe(24);
 });
 
+test('Perfect Game', () => {
+  resetGame();
+  rollMany(12,10);
+  expect(game.getScore()).toBe(300);
+});
+
