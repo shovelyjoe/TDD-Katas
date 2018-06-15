@@ -11,7 +11,6 @@ const game = () => {
       return score;
     },
     roll: (pins) => {
-      score += pins;
       rolls[currentRoll++] = pins;
     }
   }
