@@ -6,10 +6,15 @@ const game = () => {
   return {
     getScore: () => {
       let score = 0;
-      let i = 0;
+      let i = 0; //Un-informative Name
       for(let frame = 0; frame < 10; frame++){
-        score += rolls[i] + rolls[i+1];
-        i += 2;
+        if(rolls[i] + rolls[i+1] === 10){
+          score += 10 + rolls[i+2]; //Spare
+          i += 2;
+        }else{
+          score += rolls[i] + rolls[i+1];
+          i += 2;
+        }
       }
       return score;
     },
