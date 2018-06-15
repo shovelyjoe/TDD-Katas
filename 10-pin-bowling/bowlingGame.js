@@ -1,14 +1,11 @@
-let score = 0;
-
-const roll = pins => {
-  score += pins
-}
-
-const getScore = () => {
-  return score;
+const game = () => {
+  let score = 0;
+  return {
+    getScore: () => score,
+    roll: (pins) => score += pins
+  }
 }
 
 module.exports = {
-  roll : roll,
-  getScore : getScore
-}
+  game : game
+};
