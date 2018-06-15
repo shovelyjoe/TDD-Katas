@@ -1,14 +1,17 @@
 const game = require('./bowlingGame');
 
+let rollMany = ( n, pins ) => {
+  for(let i = 0; i < n; i++)
+    game.roll(pins);
+}
+
 test('Gutter Game', () => {
-  for(let i = 0; i < 20; i++)
-    game.roll(0);
+  rollMany(20,0);
   expect(game.getScore()).toBe(0);
 });
 
 test('All Ones', () => {
-  for(let i = 0; i < 20; i++)//Duplicated for loop
-    game.roll(1);
+  rollMany(20,1);
   expect(game.getScore()).toBe(20);
 });
 
