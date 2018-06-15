@@ -6,10 +6,11 @@ const game = () => {
   return {
     getScore: () => {
       let score = 0;
-      for(let i = 0; i < rolls.length; i++)
-        if(rolls[i] + rolls[i+1] === 10) //Spare
-          score += //Design still wrong - need to check as frames, not two rolls
-        score += rolls[i];
+      let i = 0;
+      for(let frame = 0; frame < 10; frame++){
+        score += rolls[i] + rolls[i+1];
+        i += 2;
+      }
       return score;
     },
     roll: (pins) => {
