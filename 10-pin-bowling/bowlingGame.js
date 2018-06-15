@@ -3,7 +3,7 @@ const roll = pins => {
 }
 
 const score = () => {
-  return -1;
+  return 0;
 }
 
 module.exports = {
