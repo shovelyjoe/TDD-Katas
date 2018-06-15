@@ -33,3 +33,12 @@ test('One Spare', () => {
   expect(game.getScore()).toBe(16);
 });
 
+test('One Strike', () => {
+  resetGame();
+  game.roll(10);
+  game.roll(3);
+  game.roll(4);
+  rollMany(16,0);
+  expect(game.getScore()).toBe(24);
+});
+
