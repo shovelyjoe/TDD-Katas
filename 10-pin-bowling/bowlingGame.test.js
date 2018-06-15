@@ -13,6 +13,10 @@ let rollSpare = () => {
   game.roll(5);
 }
 
+let rollStrike = () => {
+  game.roll(10);
+}
+
 test('Gutter Game', () => {
   resetGame();
   rollMany(20,0);
@@ -35,7 +39,7 @@ test('One Spare', () => {
 
 test('One Strike', () => {
   resetGame();
-  game.roll(10);
+  rollStrike();
   game.roll(3);
   game.roll(4);
   rollMany(16,0);
