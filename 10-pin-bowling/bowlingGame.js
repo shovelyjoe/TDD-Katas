@@ -10,7 +10,10 @@ const game = () => {
       let score = 0;
       let frameIndex = 0;
       for(let frame = 0; frame < 10; frame++){
-        if(isSpare(frameIndex)){
+        if(rolls[frameIndex] === 10){//Strike
+          score += 10 + rolls[frameIndex+1] + rolls[frameIndex+2];
+          frameIndex++;
+        }else if(isSpare(frameIndex)){
           score += 10 + rolls[frameIndex+2];
           frameIndex += 2;
         }else{
