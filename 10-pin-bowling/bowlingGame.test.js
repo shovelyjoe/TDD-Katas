@@ -8,6 +8,11 @@ let rollMany = ( n, pins ) => {
     game.roll(pins);
 }
 
+let rollSpare = () => {
+  game.roll(5);
+  game.roll(5);
+}
+
 test('Gutter Game', () => {
   resetGame();
   rollMany(20,0);
@@ -22,8 +27,7 @@ test('All Ones', () => {
 
 test('One Spare', () => {
   resetGame();
-  game.roll(5);
-  game.roll(5); // Spare
+  rollSpare();
   game.roll(3);
   rollMany(17,0);
   expect(game.getScore()).toBe(16);
