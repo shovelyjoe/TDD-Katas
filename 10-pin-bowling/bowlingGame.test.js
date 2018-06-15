@@ -20,13 +20,12 @@ test('All Ones', () => {
   expect(game.getScore()).toBe(20);
 });
 
-// Remove test until above tests pass after re-design...
-//test('One Spare', () => {
-//  resetGame();
-//  game.roll(5);
-//  game.roll(5); // Spare
-//  game.roll(3);
-//  rollMany(17,0);
-//  expect(game.getScore()).toBe(16);
-//});
-//
+test('One Spare', () => {
+  resetGame();
+  game.roll(5);
+  game.roll(5); // Spare
+  game.roll(3);
+  rollMany(17,0);
+  expect(game.getScore()).toBe(16);
+});
+
