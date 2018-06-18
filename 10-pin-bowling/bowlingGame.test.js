@@ -3,19 +3,17 @@ const Game = require('./bowlingGame');
 let game;
 const resetGame = () => game = Game.game();
 
-let rollMany = ( n, pins ) => {
-  for(let i = 0; i < n; i++)
+const rollMany = (rolls, pins) => {
+  for(let i = 0; i < rolls; i++)
     game.roll(pins);
 }
 
-let rollSpare = () => {
+const rollSpare = () => {
   game.roll(5);
   game.roll(5);
 }
 
-let rollStrike = () => {
-  game.roll(10);
-}
+const rollStrike = () => game.roll(10);
 
 test('Gutter Game', () => {
   resetGame();
@@ -40,8 +38,8 @@ test('One Spare', () => {
 test('One Strike', () => {
   resetGame();
   rollStrike();
-  game.roll(3);
   game.roll(4);
+  game.roll(3);
   rollMany(16,0);
   expect(game.getScore()).toBe(24);
 });
